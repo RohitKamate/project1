@@ -3,14 +3,15 @@ Serializers for the user API View.
 """
 from django.contrib.auth import (
     get_user_model,
-    authenticate,
+
 )
 
 from rest_framework import serializers
 
 
 # TODO - TOPIC - (DRF ModelSerializers), refer
-# https://www.django-rest-framework.org/tutorial/1-serialization/#using-modelserializers
+# https://www.django-rest-framework.org/tutorial/1-serialization/
+# using-modelserializers
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the user object."""

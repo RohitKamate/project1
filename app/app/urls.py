@@ -22,7 +22,8 @@ from drf_spectacular.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     # TODO (TOPIC - how to start using `drf-spectacular`) - Refer
-    # https://drf-spectacular.readthedocs.io/en/latest/readme.html#take-it-for-a-spin
+    # https://drf-spectacular.readthedocs.io/en/latest/readme.html
+    # #take-it-for-a-spin
     path('api/schema/', SpectacularAPIView.as_view(), name="api-schema"),
     path(
         'api/docs/',
