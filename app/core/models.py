@@ -14,8 +14,7 @@ from django.contrib.auth.models import (
 """
 How to customize default django user model and authentication?
 
-Refer - 
-https://docs.djangoproject.com/en/4.1/topics/auth/customizing
+Refer - https://docs.djangoproject.com/en/4.1/topics/auth/customizing
 
 REFER FULL EXAMPLE HERE -
 https://docs.djangoproject.com/en/4.1/topics/auth/customizing/#a-full-example
@@ -53,9 +52,9 @@ class UserManager(BaseUserManager):
         user = self.model(email=self.normalize_email(email), **extra_fields)
         # TODO - refer normalize_email method -
         # https://docs.djangoproject.com/en/4.1/topics/auth/customizing/
-        # #django.contrib.auth.models.BaseUserManager.normalize_email
+        # django.contrib.auth.models.BaseUserManager.normalize_email
 
-        # best practice to hash password using super class method `set_password`
+    # best practice to hash password using super class method `set_password`
         user.set_password(password)
 
         # it is best practice to pass `using=self._db`
@@ -95,4 +94,5 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     objects = UserManager()
 
-    USERNAME_FIELD = "email"  # overrides the default user field from base class
+    USERNAME_FIELD = "email"
+    # overrides the default user field from base class

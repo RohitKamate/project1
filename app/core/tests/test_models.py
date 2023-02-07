@@ -45,7 +45,8 @@ class ModelTests(TestCase):
         """
 
         # TODO (Topic: usage of assertRaises)
-        # https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaises
+        # https://docs.python.org/3/library/unittest.html
+        # unittest.TestCase.assertRaises
         self.assertRaises(
             ValueError,
             get_user_model().objects.create_user,
@@ -77,4 +78,3 @@ class ModelTests(TestCase):
         # `create_superuser` method
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
-
