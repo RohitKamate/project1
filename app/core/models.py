@@ -22,8 +22,6 @@ https://docs.djangoproject.com/en/4.1/topics/auth/customizing/#a-full-example
 
 
 additional notes ::
-
-
 """
 ###############################################################
 
@@ -33,15 +31,14 @@ class UserManager(BaseUserManager):
 
     def create_user(self, email: str, password: str = None, **extra_fields):
         """
-
         Args:
             email: will be new default instead of `username`
-            password: we will be using `set_password` method to encrypt password
+            password: we will be using `set_password` method to
+            encrypt Password
             **extra_fields: using this arbitrary keyword args option to
                         accomodate any additional user fields in future
 
         Returns:
-
         """
 
         if not email:
@@ -77,7 +74,6 @@ class UserManager(BaseUserManager):
             **extra_fields:
 
         Returns:
-
         """
 
         user = self.create_user(email, password)
